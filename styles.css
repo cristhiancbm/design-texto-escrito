@@ -1,0 +1,67 @@
+:root {
+    --fondo: #2f3542;
+    --text-color-1: green;
+    --text-color-2: yellow;
+    --border-text-color: black;
+    --cursor-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fondo);
+}
+
+.container {
+    overflow: hidden;
+}
+
+.container .text {
+    position: relative;
+    color: var(--text-color-2);
+    font-size: 60px;
+    font-weight: 600;
+    -webkit-text-stroke-width: 2px;
+    background: linear-gradient(to bottom right, var(--text-color-1), var(--text-color-2));
+    -webkit-text-stroke-color: var(--border-text-color);
+    background: -webkit-linear-gradient(left top, var(--text-color-1), var(--text-color-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container .first-text {
+    color: var(--text-color-1);
+}
+
+.second-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--fondo);
+    border-left: 2px solid var(--text-color-2);
+    animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate {
+
+    40%,
+    60% {
+        left: calc(100% + 5px);
+    }
+
+    100% {
+        left: 0%;
+    }
+}
